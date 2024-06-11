@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/css/boosted.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .is-invalid {
+        border-color: #dc3545;
+      }
+      .is-valid {
+        border-color: #198754;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+      }
+      .header-links a {
+        margin: 0 1rem;
+        color: #000;
+        text-decoration: none;
+      }
+      .header-links a:hover {
+        text-decoration: underline;
+      }
+      .left-sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 200px;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+      }
+      .left-sidebar img {
+        margin-bottom: 1rem;
+        width: 100px; /* Adjust the width as needed */
+        height: auto;
+      }
+      .main-content {
+        margin-left: 220px; /* Adjust margin to account for sidebar width */
+        padding: 1rem;
+      }
+      .logo > img {
+        width: 12rem;
+        position: relative;
+        left: 15rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="Logo" width="50" height="50" />
+      </div>
+      <nav class="header-links">
+        <a href="help.html">Help</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </nav>
+    </header>
+
+    <!-- Left Sidebar -->
+    <div
+      id="carouselExampleSlidesOnly"
+      class="left-sidebar"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="1.jpg" alt="First slide" />
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="2.jpg" alt="Second slide" />
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="..." alt="Third slide" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Registration Form -->
+      <div class="container mt-5">
+        <h1>Create an Account</h1>
+        <form id="signupForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required />
+            <div id="emailFeedback" class="invalid-feedback">
+              Please provide a valid email.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Mobile</label>
+            <input type="tel" class="form-control" id="phone" required />
+            <div id="phoneFeedback" class="invalid-feedback">
+              Mobile number must start with 077.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Create Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              required
+            />
+            <div id="passwordFeedback" class="invalid-feedback">
+              Password must be 6-18 characters long, contain at least one
+              uppercase letter, one lowercase letter, one number, and one
+              special character.
+            </div>
+          </div>
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="terms"
+              required
+            />
+            <label class="form-check-label" for="terms"
+              >I agree to the terms & conditions Orange.</label
+            >
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="newsletter" />
+            <label class="form-check-label" for="newsletter"
+              >Receive Coding Academy Newsletter.</label
+            >
+          </div>
+          <div class="d-grid gap-2">
+            <button
+              type="submit"
+              id="submitBtn"
+              class="btn btn-primary"
+              disabled
+            >
+              Sign Up
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              onclick="location.href='login.html'"
+            >
+              <a href="2.html"> Already have an account? Login</a>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const signupForm = document.getElementById("signupForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const phone = document.getElementById("phone");
+        const terms = document.getElementById("terms");
+        const emailFeedback = document.getElementById("emailFeedback");
+        const phoneFeedback = document.getElementById("phoneFeedback");
+        const passwordFeedback = document.getElementById("passwordFeedback");
+
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const phonePattern = /^077\d{7}$/;
+        const passwordPattern =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,18}$/;
+
+        function validateEmail() {
+          if (emailPattern.test(email.value)) {
+            email.classList.add("is-valid");
+            email.classList.remove("is-invalid");
+            return true;
+          } else {
+            email.classList.add("is-invalid");
+            email.classList.remove("is-valid");
+            emailFeedback.textContent = "Please provide a valid email.";
+            return false;
+          }
+        }
+
+        function validatePhone() {
+          if (phonePattern.test(phone.value)) {
+            phone.classList.add("is-valid");
+            phone.classList.remove("is-invalid");
+            return true;
+          } else {
+            phone.classList.add("is-invalid");
+            phone.classList.remove("is-valid");
+            phoneFeedback.innerHTML =
+              '<span ">Mobile number must be like 077xxxxxxx</span>';
+            return false;
+          }
+        }
+
+        function validatePassword() {
+          if (passwordPattern.test(password.value)) {
+            password.classList.add("is-valid");
+            password.classList.remove("is-invalid");
+            return true;
+          } else {
+            password.classList.add("is-invalid");
+            password.classList.remove("is-valid");
+            passwordFeedback.textContent =
+              "Password must be 6-18 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.";
+            return false;
+          }
+        }
+
+        function validateForm() {
+          const isEmailValid = validateEmail();
+          const isPhoneValid = validatePhone();
+          const isPasswordValid = validatePassword();
+          const isFormValid =
+            isEmailValid && isPhoneValid && isPasswordValid && terms.checked;
+
+          submitBtn.disabled = !isFormValid;
+        }
+
+        signupForm.addEventListener("input", validateForm);
+
+        signupForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (!submitBtn.disabled) {
+            const userData = {
+              id: Date.now().toString(),
+              email: email.value,
+              password: password.value,
+              phone: phone.value,
+              termsAccepted: terms.checked,
+              newsletterSubscribed:
+                document.getElementById("newsletter").checked,
+            };
+
+            localStorage.setItem(userData.id, JSON.stringify(userData));
+            alert("User registered successfully");
+            signupForm.reset();
+            submitBtn.disabled = true;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
